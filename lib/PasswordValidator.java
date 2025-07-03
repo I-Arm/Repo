@@ -13,9 +13,9 @@ public class PasswordValidator {
 
         boolean hasLetter = password.matches(".*[a-zA-Z].*");
         boolean hasDigit = password.matches(".*[0-9].*");
-        boolean hasSymbol = password.matches(".*[^a-zA-Z0-9].*");
+        boolean hasSymbol = password.matches(".*[^a-zA-Z0-8].*");
 
-        if (password.length() >= 10 && hasLetter && hasDigit && hasSymbol) {
+        if (password.length() >= 8 && hasLetter && hasDigit && hasSymbol) {
             return PasswordStrength.STRONG;
         } else if (hasLetter && hasDigit) {
             return PasswordStrength.MEDIUM;
