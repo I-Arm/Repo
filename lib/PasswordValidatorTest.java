@@ -15,8 +15,8 @@ public class PasswordValidatorTest{
         }
 
          // Test Case 2: รหัสผ่านตัวเลขซ้ำกันควรจะ WEAK
-        PasswordStrength result2 = PasswordValidator.validate(pw);
-        pw = "11111111";
+        pw = "11111111165164";
+         PasswordStrength result2 = PasswordValidator.validate(pw);
         if (result2 == PasswordStrength.WEAK) {
             System.out.println("Test Case 2:"+pw+": Passed: Short password is WEAK.");
         } else {
@@ -24,17 +24,17 @@ public class PasswordValidatorTest{
         }
 
          // Test Case 3: รหัสผ่านเป็นตัวอักษรengตัวเล็ก ตัวใหญ่ ควรจะ MEDIUM
+         pw = "Jeanangry";
         PasswordStrength result3 = PasswordValidator.validate(pw);
-        pw = "Jeanangry";
         if (result3 == PasswordStrength.MEDIUM) {
             System.out.println("Test Case 3:"+pw+": Passed: Short password is MEDIUM.");
         } else {
             System.out.println("Test Case 3:"+pw+": FAILED: Expected MEDIUM but got " + result3);
         }
 
-         // Test Case 4: รหัสผ่านที่่มีตัวอักษรengตัวเล็ก ตัวใหญ่ ตัวเลขด้วยควรจะ STRONG
+         // Test Case 4: รหัสผ่านที่่มีตัวอักษรengตัวเล็ก ตัวใหญ่ ตัวเลข ตัวอักษรพิเศษ ด้วยควรจะ STRONG
+         pw = "Jean2901.";
         PasswordStrength result4 = PasswordValidator.validate(pw);
-        pw = "Jean2901";
         if (result4 == PasswordStrength.STRONG) {
             System.out.println("Test Case 4 :"+pw+":Passed:  Short password is STRONG.");
         } else {
@@ -42,8 +42,8 @@ public class PasswordValidatorTest{
         }
 
         // Test Case 5: รหัสผ่านเป็นตัวอักษร eng ตัวเล็กทั้งหมดควรจะ WEAK
+         pw = "jeanangry";
         PasswordStrength result5 = PasswordValidator.validate(pw);
-        pw = "jeanangry";
         if (result5 == PasswordStrength.WEAK) {
             System.out.println("Test Case 5:"+pw+": Passed: Short password is WEAK .");
         } else {
