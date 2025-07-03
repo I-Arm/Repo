@@ -17,7 +17,7 @@ public class PasswordValidator {
         int countNum = 0;
         int countSP = 0;
         int minLength = 8; 
-        if(password==null || password.length()< minLength){
+        if(password==null || password.length() < minLength){
          return PasswordStrength.INVALID;}
         
          for(char c : password.toCharArray()){
