@@ -5,10 +5,14 @@ public class PasswordValidator {
     /**
      * คุณจะต้องเขียน Javadoc ที่สมบูรณ์ที่นี่ในอนาคต
      * เพื่ออธิบายกฎการทำงานของเมธอด
-     * @param password string ที่ต้องการตรวจสอบ 
+     * @param password string ที่ต้องการตรวจสอบ
+     * @param minLength ค่าความยาวรหัสผ่านขั้นต่ำ
+     * @param num เช็กว่ามีตัวเลขในรหัสผ่านหรือไม่
+     * @param lowercase เช็กว่ามีตัวอักษรพิมพ์เล็กในรหัสผ่านหรือไม่
+     * @param uppercase เช็กว่ามีตัวอักษรพิมพ์ใหญ่ในรหัสผ่านหรือไม่
+     * @param longlength ค่าความยาวของรหัสเพียงพอ (เกิน 8 ตัว)
      * @return PasswordStrength INVALID อื่น ๆ
      */
-    // TODO: แก้ไข return type ของเมธอดนี้ให้ถูกต้อง
     public static PasswordStrength validate(String password) { 
 
         int minLength = 8 ;
