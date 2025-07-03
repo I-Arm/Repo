@@ -7,7 +7,7 @@ public class PasswordValidator {
      * เพื่ออธิบายกฎการทำงานของเมธอด
      * @param password string ที่ต้องการตรวจสอบ 
      * @return 
-     * @return PasswordsStreng INVALID อื่นๆ
+     * @return PasswordsStreng ทำหน้าที่ตรวจสอบระดับความยากง่ายของรหัสผ่าน แบางได้เป็น 4 ระดับ ไม่ผ่าน  ง่าย ปานกลาง แข็งแกร่ง
      */
     // TODO: แก้ไข return type ของเมธอดนี้ให้ถูกต้อง
    
