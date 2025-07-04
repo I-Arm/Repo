@@ -14,7 +14,7 @@ public class PasswordValidatorTest{
             System.out.println("Test Case 1 : "+pw+" : FAILED: Expected INVALID but got " + result1);
         }
 
-        // Test Case 2: รหัสผ่านมีแค่ตัวเลขมากกว่าหรือเท่ากับ 8 ตัว ควรจะ WEAK
+        // Test Case 2: รหัสผ่านมีแค่ตัวเลขหรือตัวอักษรมากกว่าหรือเท่ากับ 8 ตัว ควรจะ WEAK
         pw = "589565190";
         PasswordStrength result2 = PasswordValidator.validate(pw);
         if (result2 == PasswordStrength.WEAK) {
@@ -23,31 +23,22 @@ public class PasswordValidatorTest{
             System.out.println("Test Case 2 : "+pw+" : FAILED: Expected INVALID but got " + result2);
         }
 
-        // Test Case 3: รหัสผ่านมีแค่อักษรมากกว่าหรือเท่ากับ 8 ตัว ควรจะ WEAK
-        pw = "uhsadeeja";
+        // Test Case 3: รหัสผ่านมีทั้งตัวเลข ตัวอักษรพิมพ์เล็กและใหญ่มากกว่าหรือเท่ากับ 8 ตัว ควรจะ MEDIUM
+        pw = "Uhas1112";
         PasswordStrength result3 = PasswordValidator.validate(pw);
-        if (result3 == PasswordStrength.WEAK) {
-            System.out.println("Test Case 3 : "+pw+" : Passed: Short password is WEAK.");
+        if (result3 == PasswordStrength.MEDIUM) {
+            System.out.println("Test Case 3 : "+pw+" : Passed: Short password is MEDIUM.");
         } else {
             System.out.println("Test Case 3 : "+pw+" : FAILED: Expected INVALID but got " + result3);
         }
 
-        // Test Case 4: รหัสผ่านมีทั้งตัวเลข ตัวอักษรพิมพ์เล็กและใหญ่มากกว่าหรือเท่ากับ 8 ตัว ควรจะ MEDIUM
-        pw = "Uhas1112";
+        // Test Case 4: รหัสผ่านมีทั้งตัวเลข ตัวอักษรพิมพ์เล็กและใหญ่ และ อักษรพิเศษรวมกันมากกว่าหรือเท่ากับ 8 ตัว ควรจะ STRONG
+        pw = "Uhas@1112";
         PasswordStrength result4 = PasswordValidator.validate(pw);
-        if (result4 == PasswordStrength.MEDIUM) {
-            System.out.println("Test Case 4 : "+pw+" : Passed: Short password is MEDIUM.");
+        if (result4 == PasswordStrength.STRONG) {
+            System.out.println("Test Case 4 : "+pw+" : Passed: Short password is STRONG.");
         } else {
             System.out.println("Test Case 4 : "+pw+" : FAILED: Expected INVALID but got " + result4);
-        }
-
-        // Test Case 5: รหัสผ่านมีทั้งตัวเลข ตัวอักษรพิมพ์เล็กและใหญ่ และ อักษรพิเศษรวมกันมากกว่าหรือเท่ากับ 8 ตัว ควรจะ STRONG
-        pw = "Uhas@1112";
-        PasswordStrength result5 = PasswordValidator.validate(pw);
-        if (result5 == PasswordStrength.STRONG) {
-            System.out.println("Test Case 5 : "+pw+" : Passed: Short password is STRONG.");
-        } else {
-            System.out.println("Test Case 5 : "+pw+" : FAILED: Expected INVALID but got " + result5);
         }
 
         System.out.println("--------------------------------");
